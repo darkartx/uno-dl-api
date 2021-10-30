@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package uno_dl.v1.status_code;
+
+enum StatusCode {
+  SUCCESS = 0;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package uno_dl.v1.status;
+
+enum Status {
+  UNDEFINED = 0;
+  OK = 1;
+}

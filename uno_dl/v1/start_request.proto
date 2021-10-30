@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package uno_dl.v1.start_request;
+
+message StartRequest {
+  string id = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package uno_dl.v1.download_type;
+
+enum DownloadType {
+  UNDEFINED = 0;
+  HTTP = 1;
+  TORRENT = 2;
+}

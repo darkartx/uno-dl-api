@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package uno_dl.v1.status_result;
+
+import "uno_dl/v1/status.proto";
+
+message StatusResult {
+  uno_dl.v1.status.Status status = 1;
+}

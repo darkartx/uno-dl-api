@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package uno_dl.v1.add_request;
+
+import "uno_dl/v1/download_type.proto";
+
+message AddRequest {
+  string destination = 1;
+  bytes source = 2;
+  uno_dl.v1.download_type.DownloadType download_type = 3;
+}

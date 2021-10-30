@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package uno_dl.v1.service;
+
+import "google/protobuf/empty.proto";
+import "uno_dl/v1/add_request.proto";
+import "uno_dl/v1/add_result.proto";
+import "uno_dl/v1/status_code.proto";
+import "uno_dl/v1/item_request.proto";
+import "uno_dl/v1/info_result.proto";
+import "uno_dl/v1/status_result.proto";
+
+service UnoDl {
+  rpc Add(uno_dl.v1.add_request.AddRequest) returns (AddResultResponse) {};
+  rpc Start(uno_dl.v1.item_request.ItemRequest) returns (StartResultResponse) {};
+  rpc Pause(uno_dl.v1.item_request.ItemRequest) returns (PauseResultResponse) {};
+  rpc Remove(uno_dl.v1.item_request.ItemRequest) returns (RemoveResultResponse) {};
+  rpc Info(uno_dl.v1.item_request.ItemRequest) returns (InfoResultResponse) {};
+  rpc Status(google.protobuf.Empty) returns (StatusResultResponse) {};
+}
+
+message AddResultResponse {
+  uno_dl.v1.status_code.StatusCode status_code = 1;
+  uno_dl.v1.add_result.AddResult result = 2;
+  optional string error = 3;
+}
+
+message StartResultResponse {
+  reserved 2;
+  uno_dl.v1.status_code.StatusCode status_code = 1;
+  optional string error = 3;
+}
+
+message PauseResultResponse {
+  reserved 2;
+  uno_dl.v1.status_code.StatusCode status_code = 1;
+  optional string error = 3;
+}
+
+message RemoveResultResponse {
+  reserved 2;
+  uno_dl.v1.status_code.StatusCode status_code = 1;
+  optional string error = 3;
+}
+
+message InfoResultResponse {
+  uno_dl.v1.status_code.StatusCode status_code = 1;
+  uno_dl.v1.info_result.InfoResult result = 2;
+  optional string error = 3;
+}
+
+message StatusResultResponse {
+  uno_dl.v1.status_code.StatusCode status_code = 1;
+  uno_dl.v1.status_result.StatusResult result = 2;
+  optional string error = 3;
+}

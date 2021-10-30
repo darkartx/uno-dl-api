@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package uno_dl.v1.info_result;
+
+import "uno_dl/v1/download_type.proto";
+
+message InfoResult {
+  string destination = 1;
+  uno_dl.v1.download_type.DownloadType download_type = 2;
+}
